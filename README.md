@@ -1,6 +1,6 @@
 # pokemon-jacto# Pokémon Listing App
 
-(pokemon-app/src/assets/icon.png)
+![Pokémon App](pokemon-app/src/assets/logo.png)
 
 
 Este é um aplicativo web desenvolvido em Angular e Ionic que utiliza a PokéAPI para exibir uma lista de Pokémon e detalhes individuais de cada um.
