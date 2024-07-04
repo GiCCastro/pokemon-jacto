@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="toolbar-container">
+      <div class="image-logo">
+        <img src="../../assets/icon/logo.png">      
+      </div>
+      <div class="search">
+        <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="filterPokemons()"
+          placeholder="Buscar Pokémon" class="custom-searchbar"></ion-searchbar>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="filter-container">
+    <ion-item class="filter-item">
+      <ion-label>Tipo:</ion-label>
+      <ion-select [(ngModel)]="selectedType" (ionChange)="filterPokemons()">
+        <ion-select-option value="">Todos</ion-select-option>
+        <ion-select-option *ngFor="let type of pokemonTypes" [value]="type">{{ type }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="filter-item">
+      <ion-label>Pokémon(s):</ion-label>
+      <div class="input-container">
+        <ion-input class="number-limit" type="number" [(ngModel)]="limit"></ion-input>
+        <ion-button class="button-load" (click)="loadPokemons()">
+          <ion-icon name="refresh-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-item>
+  </div>
+
+  <div class="pokemon-grid">
+    <ion-card class="pokemon-card" *ngFor="let pokemon of filteredPokemons" (click)="viewPokemonDetails(pokemon)"
+      [style.background-color]="getBackgroundColor(pokemon.types[0])">
+      <div class="pokemon-id">#{{ pokemon.number }}</div>
+      <ion-card-header>
+        <ion-card-title>{{ pokemon.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="pokemon-details">
+          <div class="pokemon-type-list">
+            <ion-chip *ngFor="let type of pokemon.types" class="pokemon-type"
+              [style.background-color]="getBackgroundColor(type)">
+              {{ type }}
+            </ion-chip>
+          </div>
+          <img [src]="pokemon.photo" alt="{{ pokemon.name }}" class="pokemon-image">
+        </div>
+        <ion-row class="ion-align-items-center ion-justify-content-center">
+          <ion-col size="auto">
+            <ion-button expand="block" [routerLink]="['/pokemon-details', pokemon.id]"
+              class="details-button">Detalhes</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,153 @@
+ion-toolbar{
+  --background: #e0e0e0;
+}
+
+.toolbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  width: 100%;
+  position: relative; 
+}
+
+.image-logo {
+  width: 128px;
+  margin-left: 20px ;
+}
+
+.search {
+  flex: 1 1 auto; 
+  position: absolute; 
+  left: 50%; 
+  transform: translateX(-50%); 
+}
+
+.custom-searchbar {
+  --border-radius: 20px; 
+  text-align: center;
+}
+
+ion-title {
+  margin: 0;
+  white-space: nowrap;
+}
+
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.filter-item {
+  min-width: 250px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.number-limit{
+  margin-left: 10px;
+}
+
+.button-load{
+  width: 50px;
+}
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 10px;
+  justify-items: center; 
+  text-transform: capitalize;
+}
+
+.pokemon-card {
+  width: 100%; 
+  max-width: 287px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-5px);
+}
+
+.pokemon-id {
+  font-size: 14px;
+  color: #555;
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+.pokemon-details {
+  display: flex;
+  align-items: flex-start;
+}
+
+.pokemon-type-list {
+  display: flex;
+  flex-direction: column; 
+  gap: 5px;
+}
+
+.pokemon-type {
+  padding: 5px 10px;
+  width: 60px;
+ display: flex;
+ justify-content: center;
+  border-radius: 16px;
+  font-size: 12px;
+  color: #fff;
+  filter: brightness(1.1);
+}
+
+.pokemon-image {
+  max-width: 100px;
+  height: 100px; 
+  margin-left: auto;
+}
+
+ion-button {
+  align-self: center;
+  --background: #6c79db;
+  width: 200px;
+}
+
+.details-button{
+  --border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  ion-toolbar{
+    padding-bottom: 10px;
+  }
+  .toolbar-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-logo {
+    width: 120px;
+  }
+  .search {
+    position: static;
+    transform: none;
+    text-align: center;
+  }
+
+  ion-searchbar {
+    max-width: 100%;
+  }
+}
+
+
