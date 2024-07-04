@@ -1,6 +1,7 @@
 # pokemon-jacto# Pokémon Listing App
 
-![Pokémon App](./src/assets/logo.png)
+![Pokémon App](pokemon-app/src/assets/screenshot.png)
+
 
 Este é um aplicativo web desenvolvido em Angular e Ionic que utiliza a PokéAPI para exibir uma lista de Pokémon e detalhes individuais de cada um.
 
@@ -26,7 +27,7 @@ Siga os passos abaixo para configurar e executar o projeto localmente:
 1. **Clone o repositório:**
 
    ```bash
-   git clone https://github.com/seu-usuario/pokemon-app.git
+   git clone https://github.com/GiCCastro/pokemon-jacto.git
    cd pokemon-app
    npm install
    ionic serve
