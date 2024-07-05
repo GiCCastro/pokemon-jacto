@@ -33,7 +33,7 @@ export class PokemonDetailsPage implements OnInit {
         this.pokemonDetails = data;
       },
       (error) => {
-        console.error('Error fetching Pokemon details:', error);
+        console.error('Erro ao buscar detalhes do Pokémon:', error);
       }
     );
   }
