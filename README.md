@@ -4,7 +4,7 @@ Este é um aplicativo web desenvolvido em Angular e Ionic que utiliza a PokéAPI
 
 ## Funcionalidades
 
-- Lista de Pokémon com filtro por nome e tipo.
+- Lista de Pokémon com filtro por nome, tipo e quantidade.
 - Detalhes individuais de cada Pokémon, incluindo habilidades, altura, peso e estatísticas.
 - Navegação entre a lista de Pokémon e a visualização detalhada.
 
