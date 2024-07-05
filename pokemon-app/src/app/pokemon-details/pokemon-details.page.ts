@@ -14,8 +14,8 @@ export class PokemonDetailsPage implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private pokeapiService: PokemonService
-  ) {}
+    private pokemonService: PokemonService
+  ) { }
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
@@ -28,7 +28,7 @@ export class PokemonDetailsPage implements OnInit {
   }
 
   loadPokemonDetails() {
-    this.pokeapiService.getPokemonDetails(this.pokemonId).subscribe(
+    this.pokemonService.getPokemonDetails(this.pokemonId).subscribe(
       (data: Pokemon) => {
         this.pokemonDetails = data;
       },
@@ -39,9 +39,8 @@ export class PokemonDetailsPage implements OnInit {
   }
 
   getBackgroundColor(type: string): string {
-    // Lógica para determinar a cor de fundo com base no tipo de Pokémon
     const typeColors: { [key: string]: string } = {
-         normal: '#a6a877',
+      normal: '#a6a877',
       grass: '#77c850',
       fire: '#ee7f30',
       water: '#678fee',
@@ -60,6 +59,6 @@ export class PokemonDetailsPage implements OnInit {
       dragon: '#6f38f6',
       fairy: '#f9acc7',
     };
-    return typeColors[type] || '#A8A878'; // Retorna uma cor padrão se o tipo não for encontrado
+    return typeColors[type] || '#A8A878'; 
   }
 }

@@ -14,10 +14,10 @@ export class HomePage implements OnInit {
   searchTerm: string = '';
   selectedType: string | null = null;
   pokemonTypes: string[] = [];
-  limit: number = 20; 
+  limit: number = 20;
   offset: number = 0;
 
-  constructor(private pokemonService: PokemonService, private router: Router) {}
+  constructor(private pokemonService: PokemonService, private router: Router) { }
 
   ngOnInit() {
     this.loadPokemons();

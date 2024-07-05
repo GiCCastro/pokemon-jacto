@@ -1,57 +1,58 @@
 <ion-header *ngIf="pokemonDetails">
-    <ion-toolbar [style.background-color]="getBackgroundColor(pokemonDetails.types[0])">
-      <ion-buttons slot="start">
-        <ion-button routerLink="/">
-          <div class="image-logo">
-            <img src="../../assets/icon/logo.png">      
-          </div>
-        </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content *ngIf="pokemonDetails">
-    <ion-card>
-      <ion-card-header [style.background-color]="getBackgroundColor(pokemonDetails.types[0])">
-        <ion-card-title>{{ pokemonDetails.name }}</ion-card-title>
-      </ion-card-header>
-  
-      <ion-card-content>
-        <ion-img [src]="pokemonDetails.photo" alt="Imagem do Pokémon"
-          [style.border-color]="getBackgroundColor(pokemonDetails.types[0])"></ion-img>
-        <ion-list>
-          <ion-item>
-            <ion-label>Habilidades:</ion-label>
-            <ion-label *ngIf="pokemonDetails">
-              <ion-chip *ngFor="let ability of pokemonDetails.abilities"
-                [style.background-color]="getBackgroundColor(pokemonDetails.types[0])">
-                {{ ability }}
-              </ion-chip>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>Tamanho:</ion-label>
-            <ion-label>
-              <p>{{ pokemonDetails.height }}<span> metro(s)</span></p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>Peso:</ion-label>
-            <ion-label>
-              <p>{{ pokemonDetails.weight }}<span> kg</span></p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>Estatísticas:</ion-label>
-            <ion-list>
-              <ion-item *ngFor="let stat of pokemonDetails.stats">
-                <ion-label>{{ stat.name }}:</ion-label>
-                <ion-label>{{ stat.base_stat }}%</ion-label>
-              </ion-item>
-            </ion-list>
-          </ion-item>
-  
-        </ion-list>
-      </ion-card-content>
-    </ion-card>
-  </ion-content>
+  <ion-toolbar [style.background-color]="getBackgroundColor(pokemonDetails.types[0])">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/">
+        <div class="image-logo">
+          <img src="../../assets/icon/logo.png">
+        </div>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="pokemonDetails">
+  <ion-card>
+    <ion-card-header [style.background-color]="getBackgroundColor(pokemonDetails.types[0])">
+      <ion-card-title>{{ pokemonDetails.name }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-img [src]="pokemonDetails.photo" alt="Imagem do Pokémon"
+        [style.border-color]="getBackgroundColor(pokemonDetails.types[0])"></ion-img>
+
+      <ion-list>
+        <ion-item>
+          <ion-label>Habilidades:</ion-label>
+          <ion-label *ngIf="pokemonDetails">
+            <ion-chip *ngFor="let ability of pokemonDetails.abilities"
+              [style.background-color]="getBackgroundColor(pokemonDetails.types[0])">
+              {{ ability }}
+            </ion-chip>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Tamanho:</ion-label>
+          <ion-label>
+            <p>{{ pokemonDetails.height }}<span> metro(s)</span></p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Peso:</ion-label>
+          <ion-label>
+            <p>{{ pokemonDetails.weight }}<span> kg</span></p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Estatísticas:</ion-label>
+          <ion-list>
+            <ion-item *ngFor="let stat of pokemonDetails.stats">
+              <ion-label>{{ stat.name }}:</ion-label>
+              <ion-label>{{ stat.base_stat }}%</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-item>
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
